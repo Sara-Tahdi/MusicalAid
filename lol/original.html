@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Alex Ellis">
+  <meta name="generator" content="Hugo 0.99.1">
+  <title>Detecting pitch with the Web Audio API and autocorrelation · Caffeinspiration</title>
+  <link rel="shortcut icon" href="https://alexanderell.is/images/favicon.ico">
+  <link rel="stylesheet" href="Detecting%20pitch%20with%20the%20Web%20Audio%20API%20and%20autocorrelation%20%C2%B7%20Caffeinspiration_files/style.css">
+  <link rel="stylesheet" href="Detecting%20pitch%20with%20the%20Web%20Audio%20API%20and%20autocorrelation%20%C2%B7%20Caffeinspiration_files/highlight.css">
+  <link rel="stylesheet" href="Detecting%20pitch%20with%20the%20Web%20Audio%20API%20and%20autocorrelation%20%C2%B7%20Caffeinspiration_files/font-awesome.min.css">
+  <link href="https://alexanderell.is/index.xml" rel="alternate" type="application/rss+xml" title="Caffeinspiration">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Detecting pitch with the Web Audio API and autocorrelation">
+  <meta name="twitter:description" content="I’ve been playing with the Web Audio API recently, and I made a basic app that will detect the pitch of incoming tones using your microphone. You can try it by pressing “Start” (be sure to try both the sine wave and the frequency displays), and I’ll be walking through how it works below. Start Press start to begin Rounding options: No rounding Round to nearest Hz Round to nearest note Smoothing options: No smoothing Basic smoothing Very smoothed (note must be more consistent and held for longer) Display (click Start after you switch): Sine wave Frequency Unfortunately, JavaScript is needed to run this.">
+  <div class="example-div"></div>
+</head>
+
+<body style="background-color: black; color: yellow;">
+  <nav class="main-nav">
+    <a href="sheet_music.html"> <span class="arrow"></span>Sheet Music</a>
+    <a href="page1.html"> <span class="arrow"></span>page1</a>
+  </nav>
+
+  <section id="wrapper">
+    <article class="post">
+      <header>
+        <h1>Tuner</h1>
+      </header>
+
+      <div>
+        <input style="display: none;" type="radio" id="roundingNone" name="rounding" value="none">
+        <label for="roundingNone"></label>
+        <br>
+        <input style="display: none;" type="radio" id="roundingMedium" name="rounding" value="hz" checked="checked">
+        <label for="roundingMedium"></label>
+        <br>
+        <input style="display: none;" type="radio" id="roundingHard" name="rounding" value="note">
+        <label for="roundingHard"></label>
+        <br>
+      </div>
+      <br>
+
+      <div>
+        <input type="radio" id="smoothingNone" name="smoothing" value="none" style="display: none;">
+        <label for="smoothingNone"></label>
+        <br>
+        <input style="display: none;" type="radio" id="smoothingMedium" name="smoothing" value="basic" checked="checked">
+        <label for="smoothingMedium"></label>
+        <br>
+        <input style="display: none;" type="radio" id="smoothingHard" name="smoothing" value="very">
+        <label for="smoothingHard"></label>
+        <br>
+      </div>
+      <br>
+
+      <div>
+        <input style="display: none;" type="radio" id="displaySine" name="display" value="sine" checked="checked">
+        <label for="displaySine"></label>
+        <br>
+        <input style="display: none;" type="radio" id="displayFrequency" name="display" value="frequency">
+        <label for="displayFrequency"></label>
+        <br>
+      </div>
+      <br>
+
+      <section id="post-body">
+        <p>Play a note and it should be detected!</p>
+        <p>Use this to tune your instrument or create music.</p>
+
+        <div>
+          <p><canvas class="visualizer" width="640" height="100"></canvas>
+            <br>
+            <div id="detectedNotesContainer"></div>
+            <button id="init" onclick="init()">Start</button>
+          </p>
+          <h1 id="note">Too quiet...</h1>
+          <noscript>
+            Unfortunately, JavaScript is needed to run this. The only JS running on my site is for the projects (no tracking, etc) if you want to enable it. If not, I totally understand :)
+            <p><a href="440hz.png">Here&rsquo;s what the pitch detection looks like.</a>
+          </noscript>
+          <p></p>
+
+          <script src="Detecting%20pitch%20with%20the%20Web%20Audio%20API%20and%20autocorrelation%20%C2%B7%20Caffeinspiration_files/tuner.js"></script>
+
+          <style>
+            /* Additional CSS styles if needed */
+            #wrapper {
+      background-color: black;
+      color: yellow;
+    }
+          </style>
+        </div>
+      </section>
+    </article>
+  </section>
+</body>
+</html>
