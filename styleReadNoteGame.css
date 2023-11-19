@@ -1,13 +1,37 @@
-body{
+/*body{
     background-color:white;
     color: black;
     font-family: "consolas", sans-serif;
-}
+}*/
 h1{
-    color: black;
+    color: rgb(255,215,0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 p{
+    color: rgb(255,215,0);
     font-family:Arial, Helvetica, sans-serif;
 }
 
+.active {
+    background-color: rgb(255,215,0);
+  }
+
+  li a{
+    float: left;
+    color: rgb(255,215,0);
+    padding: 8px;
+    text-align: center;
+
+    background-color: 242426;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  li a:hover {
+    background-color: #1a1a1c;
+  }

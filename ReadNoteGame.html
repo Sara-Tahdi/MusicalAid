@@ -4,14 +4,37 @@
   <title>Read Note Game</title>
   <link rel="stylesheet" href="styleReadNoteGame.css">
 
+  <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #242426;
+            
+        }
+  </style>
+
 </head>
 
 
 <body>
-  <h1>Note Identification Practice</h1>
-<p>This exercise can be used to help you learn different musical notes.</p>
+  <ul>
+    <li><a href="index.html" class="sidebar-link">Home</a></li>
+    <li><a href="lol/original.html" class="sidebar-link">Audio to Note</a></li>
+    <li><a href="aboutus.html" class="sidebar-link">About MusicalAid</a></li>
+    
+</ul>
+<br>
+<br>
+<br>
 
-<p style="font-style: italic;">Try and identify the note shown in the picture below!</p>
+  <h1 style="padding-left: 20px;">Note Identification Practice</h1>
+  <br>
+  <br>
+
+<p style="padding-left: 20px;">This exercise can be used to help you learn different musical notes.</p>
+
+<p style="font-style: italic; padding-left: 20px;">Try and identify the note shown in the picture below!</p>
 
 <div style="height: 200px; width: 800px;">
   <img id="randomImage" style="object-fit: cover;" alt="Random Image">
@@ -22,14 +45,14 @@
 <br>
 <br>
 <br>
-<button type="button" style="font-size: 20px; background-color: yellow; color: black; position: absolute; border-radius: 8px;" onclick="getRndImage()">Next note</button>
+<button type="button" style="font-size: 20px; background-color: rgb(255,215,0); color: black; position: absolute; border-radius: 8px;" onclick="getRndImage()">Next note</button>
 <br>
 <br>
 <br>
 
 <form id="noteForm" onsubmit="return checkMusicalNote()">
   <!-- <label for="noteInput">Enter a musical note (e.g., c#):</label> -->
-  <input type="text" id="noteInput" name="noteInput" placeholder="e.g. c#" required>
+  <input type="text" id="noteInput" name="noteInput" placeholder="e.g. c#" required style="color: white;">
   <button style="font-size: 16px; background-color: lightyellow; color: black;" type="submit">Check Note</button>
 </form>
 
@@ -115,5 +138,6 @@ let correctNote = "null";
   <img style="display: none;" img src="../NotesPics/Fflat.png">
   <img style="display: none;" img src="../NotesPics/Fflat2.png">
   -->
+
 </body>
 </html>
