@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Read Note Game</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+  <h1>Note Identification Practice</h1>
+<p>This exercise can be used to help you learn different musical notes.</p>
+
+<p style="font-style: italic;">Try and identify the note shown in the picture below!</p>
+
+<div style="height: 200px; width: 800px;">
+  <img id="randomImage" style="object-fit: cover;" alt="Random Image">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button type="button" style="font-size: 20px; background-color: yellow; color: black; position: absolute; border-radius: 8px;" onclick="getRndImage()">Next note</button>
+<br>
+<br>
+<br>
+
+<form id="noteForm" onsubmit="return checkMusicalNote()">
+  <!-- <label for="noteInput">Enter a musical note (e.g., c#):</label> -->
+  <input type="text" id="noteInput" name="noteInput" placeholder="e.g. c#" required>
+  <button style="font-size: 16px; background-color: lightyellow; color: black;" type="submit">Check Note</button>
+</form>
+
+<script>
+  const imageLinks = [
+  ["A.png", 'a'],
+  ["A2.png", 'a'],
+  ["Aflat.png", 'ab'],
+  ["Asharp.png", 'a#'],
+  ["B.png", 'b'],
+  ["Bsharp.png", 'b#'], 
+  ["C.png", 'c'],
+  ["Cflat.png", 'cb'],
+  ["Csharp.png", 'c#'],
+  ["Csharp2.png", 'c#'],
+  ["D.png", 'd'],
+  ["Dsharp.png", 'd#'],
+  ["Fflat.png", 'fb'],
+  ["Fflat2.png", 'fb'],
+  ["G.png", 'g'],
+  ["Gflat.png", 'gb']
+  ];
+
+
+
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  
+
+
+  /*function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+*/
+
+  
+let correctNote = "null";
+  
+  function getRndImage(){ //repeats the same image twice in a row 1/16 of the time
+    let randomIndex = getRndInteger(0,16);
+    let imgElement = document.getElementById('randomImage');
+    imgElement.src = imageLinks[randomIndex][0];
+    correctNote = imageLinks[randomIndex][1];
+  }
+
+  function checkMusicalNote(){
+    let userNote = document.getElementById("noteInput").value;
+    if (userNote == correctNote){
+      alert("Correct note!");
+    } else{
+      alert("Incorrect note. The correct note is " + correctNote);
+    }
+  }
+</script>
+
+  <!--<img style="display: none;" src="../NotesPics/A.png">
+  <img style="display: none;" img src="../NotesPics/A2.png">
+  <img style="display: none;" img src="../NotesPics/Aflat.png">
+  <img style="display: none;" img src="../NotesPics/Asharp.png">
+  <img style="display: none;" img src="../NotesPics/B.png">
+  <img style="display: none;" img src="../NotesPics/Bsharp.png">
+  <img style="display: none;" img src="../NotesPics/C.png">
+  <img style="display: none;" img src="../NotesPics/Cflat.png">
+  <img style="display: none;" img src="../NotesPics/Csharp.png">
+  <img style="display: none;" img src="../NotesPics/Csharp2.png">
+  <img style="display: none;" img src="../NotesPics/D.png">
+  <img style="display: none;" img src="../NotesPics/Dsharp.png">
+  <img style="display: none;" img src="../NotesPics/Fflat.png">
+  <img style="display: none;" img src="../NotesPics/Fflat2.png">
+  -->
+</body>
+</html>
