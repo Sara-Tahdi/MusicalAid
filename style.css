@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+}
+
+.sidebar header {
+    font-size: 22px;
+    color: rgb(255, 215, 0);
+    text-align: center;
+    line-height: 70px;
+    user-select: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 150px;
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    padding-left: 40px;
+}
+.strip {
+    width: 5px;
+    height: 50px; /* Adjust the height as needed */
+    margin: 0 2px; /* Adjust the margin as needed */
+    background-color: rgb(255, 215, 0);
+    transition: height 0.2s ease-out;
+  }
+
+.content {
+    flex-grow: 1;
+    overflow: hidden;
+    background-color:rgb(255, 215, 0);
+    color: white;
+    padding: 20px;
+}
