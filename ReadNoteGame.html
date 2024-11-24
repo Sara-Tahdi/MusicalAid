@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Read Note Game</title>
-  <link rel="stylesheet" href="styleReadNoteGame.css">
+  <link rel="stylesheet" href="css/styleReadNoteGame.css">
 
   <style>
     * {
@@ -18,9 +18,10 @@
 
 
 <body>
+  <br>
   <ul>
     <li><a href="index.html" class="sidebar-link">Home</a></li>
-    <li><a href="lol/original.html" class="sidebar-link">Audio to Note</a></li>
+    <li><a href="original.html" class="sidebar-link">Audio to Note</a></li>
     <li><a href="aboutus.html" class="sidebar-link">About MusicalAid</a></li>
     
 </ul>
@@ -58,24 +59,23 @@
 
 <script>
   const imageLinks = [
-  ["A.png", 'a'],
-  ["A2.png", 'a'],
-  ["Aflat.png", 'ab'],
-  ["Asharp.png", 'a#'],
-  ["B.png", 'b'],
-  ["Bsharp.png", 'b#'], 
-  ["C.png", 'c'],
-  ["Cflat.png", 'cb'],
-  ["Csharp.png", 'c#'],
-  ["Csharp2.png", 'c#'],
-  ["D.png", 'd'],
-  ["Dsharp.png", 'd#'],
-  ["Fflat.png", 'fb'],
-  ["Fflat2.png", 'fb'],
-  ["G.png", 'g'],
-  ["Gflat.png", 'gb']
-  ];
-
+  ["assets/A.png", 'a'],
+  ["assets/A2.png", 'a'],
+  ["assets/Aflat.png", 'ab'],
+  ["assets/Asharp.png", 'a#'],
+  ["assets/B.png", 'b'],
+  ["assets/Bsharp.png", 'b#'], 
+  ["assets/C.png", 'c'],
+  ["assets/Cflat.png", 'cb'],
+  ["assets/Csharp.png", 'c#'],
+  ["assets/Csharp2.png", 'c#'],
+  ["assets/D.png", 'd'],
+  ["assets/Dsharp.png", 'd#'],
+  ["assets/Fflat.png", 'fb'],
+  ["assets/Fflat2.png", 'fb'],
+  ["assets/G.png", 'g'],
+  ["assets/Gflat.png", 'gb']
+];
 
 
   function getRndInteger(min, max) {
@@ -121,6 +121,9 @@ let correctNote = "null";
       alert("Incorrect note. The correct note is " + correctNote);
     }
   }
+
+  window.onload = getRndImage;
+
 </script>
 
   <!--<img style="display: none;" src="../NotesPics/A.png">
